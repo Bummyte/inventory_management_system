@@ -1,0 +1,11 @@
+h1{text-align: center;
+   color: blue;}
+
+p{text-align: center;
+   color: rgb(0, 145, 255);}   
+
+.footer{
+   margin: 20px 10px 10px 10px;
+   text-align: center;
+   color: rgb(45, 45, 145);
+}    

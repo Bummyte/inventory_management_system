@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %} Login {% endblock title %}
+{% block head %}
+{{ super() }}
+{% endblock head %}
+
+{% block content %}
+{{ super() }} 
+    <h2>Register</h2>
+    <form action="{{ url_for('register') }}" method="post">
+    <div class="msg">{{ msg }}</div>
+        <!-- Registration form fields -->
+    <div class="mb-5">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="enter your username" class="textbox" required><br><br>
+        <label for="confirm_username">Confirm Username:</label>
+        <input type="text" id="confirm_username" name="confirm_username" placeholder="confirm your username" class="textbox" required><br><br>
+    </div>
+    <div class="mb-5">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="enter your email" class="textbox" required><br><br>
+        <label for="confirm_email">Confirm Email:</label>
+        <input type="confirm_email" id="confirm_email" name="confirm_email" placeholder="confirm your email" class="textbox" required><br><br>
+    </div>
+
+    <div class="mb-5">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="enter your pssword" class="textbox" required><br><br>
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="confirm_password" id="confirm_password" name="confirm_password" placeholder="confirm your pssword" class="textbox" required><br><br>
+    </div>
+    <div class="mb-5">
+        <input type="submit" value="Register">
+    </div>
+    </form>
+    <p class="bottom">Already have an account? <a class="bottom" href="{{url_for('login')}}"> Sign In here</a></p>    
+   
+{% endblock content %}
+{% block footer %}
+{{ super() }}
+{% endblock footer %}    

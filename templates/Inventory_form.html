@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+{% block title %}Inventory Management{% endblock title %}
+{% block head %}
+{{ super() }}
+{% endblock head %}
+{% block content %}
+{{ super() }}
+<H1>Inventory Management System</H1>
+<h2>Add New Product</h2>
+<form method="post">
+    <label for="product_name">Product Name:</label>
+    <input type="text" id="product_name" name="product_name" required><br><br>
+
+    <label for="description">Description:</label>
+    <textarea id="description" row="10" col="10" name="description" required></textarea><br><br>
+
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" min="0" step="0.01" required><br><br>
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" min="0" required><br><br>
+
+    <label for="category">Category:</label>
+    <input type="text" id="category" name="category" required><br><br>
+
+    <input type="submit" value="Add Product">
+</form>
+<hr>
+
+<!--Form for updating product-->
+<h2>Updating Products</h2>
+    <form name ="Updating Products" id="productupdateform" method="POST">
+        <label for="product_id">Product Id No</label>
+        <input id="product_id" name="product_id" type="number" required><br><br>
+
+        <label for="product_name">Product Name:</label>
+        <input type="text" id="product_name" name="product_name"  required><br><br>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea><br><br>
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" min="0" step="0.01" required><br><br>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="0" required><br><br>
+
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category" required><br><br>
+
+        <input type="submit" value="Update Product">
+    </form>
+<hr>
+
+<!--Adding suppliers name-->
+<h2>Adding Suppliers</h2>
+    <form name="Supplier_form" method="post">
+        <label for="Supplier_name"> Supplier Name:</label>
+        <input id="Supplier_name" name="Supplier_name" type="text" required><br><br>
+
+        <label for="contact_person">Contact Person</label>
+        <input id="contact_person" name="contact_person" type="text" required><br><br>
+
+        <label for="phone_no">Phone Number: </label>
+        <input id="phone_no" name="phone_no" type="number" required><br><br>
+
+        <label for="email">Email:</label>
+        <input id="email" name="email" type="email" required><br><br>
+
+        <input type="submit" value="Add supplier">
+    </form>
+<hr>
+
+<!--Editing Supplier Name-->
+<h2> Editing Supplier </h2>
+    <form id="editingsupplierform" method="POST">
+        <label for="supplier_id">Supplier Id No</label>
+        <input id="supplier_id" name="supplier_id" type="number"required><br><br>
+
+        <label for="supplier_name">Supplier Name:</label>
+        <input type="text" id="supplier_name" name="supplier_name" required><br><br>
+
+        <label for="contact_person">Contact Person:</label>
+        <input type="text" id="contact_person" name="contact_person" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" required><br><br>
+
+        <input type="submit" value="Update Supplier">
+    </form>
+<hr>
+
+<!--Filtering of products: using price,name -->
+<h2>Product Filtering</h2>
+    <form id="productfilterform" method="GET">
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category"><br><br>
+
+        <label for="product_name"> Product Name </label>
+        <input type="text" id="product_name" name="product_name"><br><br>
+        
+        <label for="price_min">Minimum Price:</label>
+        <input type="number" id="price_min" name="price_min" step="0.01"><br><br>
+
+        <label for="price_max">Maximum Price:</label>
+        <input type="number" id="price_max" name="price_max" step="0.01"><br><br>
+
+        <input type="submit" value="Apply Filters">
+    </form>
+<hr>
+
+<!--searching through the product-->
+<h2>Product Search</h2>
+    <form id="searchproductform" method="GET">
+        <label for="product_id">Product Id No</label>
+        <input id="product_id" name="product_id" type="number" required><br><br>
+
+        <label for="product_name">Product Name</label>
+        <input type="text" id="product_name" name="product_name" required><br><br>
+
+        <input type="submit" value="Search">
+    </form>
+<hr>
+
+<!--Form for adding purchased products-->
+<h2>Purchase Transaction</h2>
+    <form name="product_purchase" method="post">
+        <label for="product_id">Product ID:</label>
+        <input type="text" id="product_id" name="product_id" required><br><br>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" required><br><br>
+
+        <label for="cost">Cost per Unit:</label>
+        <input type="number" id="cost" name="cost" min="0" step="0.01" required><br><br>
+
+        <label for="supplier_id">Supplier ID:</label>
+        <input type="text" id="supplier_id" name="supplier_id"><br><br>
+
+        <input type="submit" value="Record Purchase">
+    </form>
+<hr>
+
+<!--Adding form for sales transaction-->
+<h2>Sales Transaction</h2>
+<form method="POST">
+    <label for="product_id">Product ID:</label>
+    <input type="text" id="product_id" name="product_id" required><br><br>
+
+    <label for="quantity">Quantity Sold:</label>
+    <input type="number" id="quantity" name="quantity" min="1" required><br><br>
+
+    <label for="price">Price per Unit:</label>
+    <input type="number" id="price" name="price" min="0" step="0.01" required><br><br>
+
+    <label for="customer_id">Customer ID:</label>
+    <input type="text" id="customer_id" name="customer_id" required><br><br>
+
+    <input type="submit" value="Record Sale">
+</form>
+
+{% endblock content %}
+
+{% block footer %}
+{{ super() }}
+{% endblock footer %}
