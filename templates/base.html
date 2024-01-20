@@ -1,19 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    {% block head %} 
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="keyword" content="html,">
     <meta name="Author" content="Bunmi">
-    <meta name="description" content="Dynamic web development">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
-    {% block title %} {% endblock title %}
-    {% endblock head %}
-</head>
-
-<body>
+    <title>{% block title %}My App{% endblock %}</title>
     
-    {% block content %} 
+</head>
+<body>
+    <div id="container">
+        <div>
+        {% block content %}{% endblock %}
         <h1></h1>
         <nav>
             <li><a href="/">Home</a></li>
@@ -21,18 +20,15 @@
             <li><a href="/register">Register</a></li>
             <li><a href="/inventory_form">Inventory Forms</a></li>
         </nav>
-    {% endblock content %}
-    
-    
-    {% block footer %} 
+        </div>
         <div class="footer">
-        &copy; copyright 2023 by <a> - Inventory system management
+        {% block footer %}{% endblock footer %} 
+        
+        &copy; my_app copyright 2023 by Bunmi <a> - Inventory system management
         </div>    
-    {% endblock footer %}
-
-
-   
-
+    
+        
+    </div>
+    
 </body>
-
 </html>

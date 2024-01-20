@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %} Login {% endblock title %}
+{% block title %} Register - My APP {% endblock title %}
 {% block head %}
 {{ super() }}
 {% endblock head %}
@@ -9,7 +9,7 @@
     <h2>Register</h2>
     <form action="{{ url_for('register') }}" method="post">
     <div class="msg">{{ msg }}</div>
-        <!-- Registration form fields -->
+        <!-- Adding Registration form fields -->
     <div class="mb-5">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" placeholder="enter your username" class="textbox" required><br><br>
@@ -34,7 +34,7 @@
     </div>
     </form>
     <p class="bottom">Already have an account? <a class="bottom" href="{{url_for('login')}}"> Sign In here</a></p>    
-   
+    
 {% endblock content %}
 {% block footer %}
 {{ super() }}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Supplier Dashboard - My App{% endblock %}
+
+{% block content %}
+    <h1>Welcome, {{ supplier_name }}!</h1>
+    
+    <h2>Your Supplied Products</h2>
+    
+    {% if supplied_products %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in supplied_products %}
+                    <tr>
+                        <td>{{ product.product_id }}</td>
+                        <td>{{ product.product_name }}</td>
+                        <td>{{ product.category }}</td>
+                        <td>{{ product.price }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No products supplied yet.</p>
+    {% endif %}
+{% endblock %}

@@ -1,16 +1,16 @@
-{% extends "base.html" %}
-{% block title %} Home- Inventory Management {% endblock title %}
-{% block head %}
-{{ super() }}
-{% endblock head %}
-{% block content %}
-{{ super() }}
-    <div class="header">
-    <h1 class="word">Inventory Management System</h1>
-    <p>Hi {{session.username}}!! You are welcome.</p>
-    </div>
+{% extends 'base.html' %}
 
-{% endblock content %}
+{% block title %}Home - My App(IMS){% endblock %}
+<meta name="description" content="Home page for Inventory Management System">
+
+{% block content %}
+    <h1>Welcome to My App(Bunmi-Inventory Management System)</h1>
+    <h2>We offer streamlined backend development for efficient inventory management</h2>
+    <p>Explore comprehensive control and monitoring of items, manage products, suppliers, and transactions.</p>
+    <P>Log in as an admin or register as a supplier to experience enhanced efficiency</P><br>
+    <p>Immerse yourself in a visually engaging interface. Start your journey to efficient inventory management now!</p>
+
+{% endblock %}
 
 {% block footer %}
 {{ super() }}

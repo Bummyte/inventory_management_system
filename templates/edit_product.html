@@ -1,0 +1,22 @@
+<h2>Updating Products</h2>
+    <form method="post" action="/edit_product">
+        <label for="product_id">Product_Id No</label>
+        <input id="product_id" name="product_id" type="number" required><br><br>
+
+        <label for="product_name">Product Name:</label>
+        <input type="text" id="product_name" name="product_name"  required><br><br>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea><br><br>
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" min="0" step="0.01" required><br><br>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="0" required><br><br>
+
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category" required><br><br>
+
+        <button type="submit">Edit Product</button> 
+    </form>
